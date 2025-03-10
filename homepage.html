@@ -13,6 +13,31 @@
         <input type="text" placeholder="Search...">
         <button type="submit">Submit</button>
     </form>
+
+	<div id="username">big_bets_101
+	</div>
+
+	<div id="stock_window">
+
+		<div id="companyTicker">KO
+		</div>
+
+		<div id="companyName">The Coca-Cola Company
+		</div>
+
+		<button id="addToWatchlist">Add To Watchlist</button>
+
+	</div>
+
+	<div id="watchlist">
+		<b>Watchlist</b><br>
+	</div>
+
+<!-- imports supabase javascript library to html page -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="tracker.js"></script>
+<script> window.onload = loadWatchlist; </script>
+
 </body>
     
 </html>
