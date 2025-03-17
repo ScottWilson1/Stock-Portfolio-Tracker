@@ -4,40 +4,94 @@
 <head>
     <!-- Page Name -->
     <title>Stock Portfolio Tracker</title>
+    
+    <style>
+        /* Body Format */
+        body {
+            display: flex; /* proper alignment */
+            flex-direction: column; /* stack elements vertically */
+            align-items: center; /* center elements */
+            text-align: center; /* center text */
+            margin: 0;  /* proper alignment */
+            padding: 0;  /* proper alignment */
+        }
+        /* Search Bar Format */
+        input {
+            width: 800px; /* width of search bar */
+            height: 40px; /* height of search bar */
+            background-color: lightgray; /* background color */
+            border: 2px solid black; /* border format */
+            border-radius: 8px; /* rounded border */
+            font-size: 20px; /* text size */
+            font-style: italic; /* italicize text */
+            text-align: center; /* center text */
+            padding: 8px; /* add padding around text */
+        }
+        /* Container for Rectangles */
+        .rectangle-container {
+            display: flex; /* proper alignment */
+            justify-content: center; /* center rectangles */
+            gap: 30px; /* space between rectangles */
+        }
+        /* Stock Format */
+        .rectangle.large {
+            display: flex; /* proper alignment */
+            width: 480px; /* rectangle width */
+            height: 400px; /* rectangle height */
+            border: 2px solid black; /* border format */
+            border-radius: 8px; /* rounded border */
+            font-size: 20px; /* font size */
+            font-weight: bold; /* font bold */
+            text-align: top; /* text top alignment */
+            justify-content: left; /* text left justified */
+            padding: 8px; /* add padding around text */
+        }
+        /* Watchlist Format */
+        .rectangle.small {
+            display: flex; /* proper alignment */
+            width: 280px; /* rectangle width */
+            height: 400px; /* rectangle height */
+            border: 2px solid black; /* border format */
+            border-radius: 8px; /* rounded border */
+            font-size: 20px; /* font size */
+            font-weight: bold; /* font bold */
+            text-align: top; /* text top alignment */
+            justify-content: left; /* text left justified */
+            padding: 8px; /* add padding around text*/
+        }
+    </style>
 </head>
 
 <body>
     <!-- Page Title -->
     <h1><center>Stock Portfolio Tracker</center></h1>
+
+    <!-- Search Bar -->
     <form>
-        <input type="text" placeholder="Search...">
-        <button type="submit">Submit</button>
+        <input type="text" placeholder="search">
+        <!-- <button type="submit">Submit</button> -->
     </form>
 
-	<div id="username">big_bets_101
-	</div>
+    <!-- Container for Rectangles -->
+    <div class="rectangle-container">
+        <!-- Display User Bar -->
+        <div>
+            <div id="username">big_bets_101</div>
+        </div>
+        <!-- Display Stock -->
+        <div id="stockDisplay" class="rectangle large">
+            <h1 id="companyTicker">KO</h1>
+            <h2 id="companyName">The Coca-Cola Company</h2>
+            <!-- <form><button type="submit">remove from watchlist</button></form> -->
+        </div>
+        <!-- Display Watchlist -->
+        <div id="watchlist" class="rectangle small"><i>watchlist</i></div>
+    </div>
 
-	<div id="stock_window">
-
-		<div id="companyTicker">KO
-		</div>
-
-		<div id="companyName">The Coca-Cola Company
-		</div>
-
-		<button id="addToWatchlist">Add To Watchlist</button>
-
-	</div>
-
-	<div id="watchlist">
-		<b>Watchlist</b><br>
-	</div>
-
-<!-- imports supabase javascript library to html page -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="tracker.js"></script>
-<script> window.onload = loadWatchlist; </script>
+    <!-- imports supabase javascript library to html page -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="tracker.js"></script>
+    <script>window.onload = loadWatchlist;</script>
 
 </body>
-    
 </html>
