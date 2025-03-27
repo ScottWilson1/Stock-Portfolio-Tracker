@@ -23,7 +23,7 @@ async function loadWatchlist() {
 		return;
 	}
 
-	////////////////////  remove any holdover tickers (blank slate watchlist window)  ////////////////////
+	////////////////////  remove any holdover tickers (create blank watchlist window)  ////////////////////
 	while (watchlist.firstChild) {
 		watchlist.removeChild(watchlist.firstChild);
 	}
@@ -41,19 +41,17 @@ async function loadWatchlist() {
 		console.log('User Watchlist Empty: ', watchlistData);
 	}
 
-	////////////////////  insert each ticker returned by database watchlist => into watchlist window  ////////////////////
+	////////////////////  insert each ticker returned by database into watchlist window as a button  ////////////////////
 	for (let i = 0; i < watchlistData.length; i++) {
 		watchlist.insertAdjacentHTML('beforeend',
-			'<div id="' + watchlistData[i].ticker + 'watchlist">' + watchlistData[i].ticker + '<br></div>');
+			'<button type="button" id="' + watchlistData[i].ticker + 'watchlist">' + watchlistData[i].ticker + '<br></button>');
 	}
 
-	////////////////////  update add/remove buttons to watchlist  ////////////////////
+	////////////////////  update add/remove button to watchlist  ////////////////////
 	add_remove_stock_button();
 
-	////////////////////  reset timed blocker from add/remove function  //////////////////
-	setTimeout(() => {
-		canRun = true;
-	}, 1000);
+	////////////////////  reset timed blocker for add/remove function  //////////////////
+	startTimer();
 }
 
 async function add_remove_stock_button() {
@@ -133,6 +131,7 @@ async function addToWatchlist() {
 			.insert({ ticker: String(tickerText).trim(), name: String(companyNameText).trim() });
 		if (newStockInsertError) {
 			console.log('New Stock Insert Error: ', newStockInsertError);
+			startTimer();
 			return;
 		}
 		////////////////////  confirm stock insert  ////////////////////
@@ -146,6 +145,7 @@ async function addToWatchlist() {
 			}
 			else if (newStockError || !newStockData || newStockData.length === 0) {
 				console.log('Stock failed to insert to stock table: ', newStockError);
+				startTimer();
 				return;
 			}
 		}
@@ -159,6 +159,7 @@ async function addToWatchlist() {
 		.eq('username', String(usernameText).trim());
 	if (watchlistData && watchlistData.length > 0){
 		console.log('Stock already in User Watchlist: ', watchlistData);
+		startTimer();
 		return;
 	}
 
@@ -210,6 +211,7 @@ async function removeFromWatchlist() {
 		.eq('username', String(usernameText).trim());
 	if (watchlistError || !watchlistData || watchlistData.length === 0) {
 		console.log('Stock not found in User Watchlist: ', watchlistError);
+		startTimer();
 		return;
 	}
 
