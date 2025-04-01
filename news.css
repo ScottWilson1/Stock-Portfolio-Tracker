@@ -1,0 +1,71 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+   text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+body {
+    margin: auto;
+    width: 60%;
+}
+
+.box-section {
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+section{
+    padding: 20px 50px 50px 50px;
+    margin-bottom: 30px;
+}
+
+.dividing-line {
+    background-color: black;
+    height: 4px;
+}
+
+article {
+    position: relative;
+}
+
+.article-width {
+    width: 60%;
+}
+
+.article-title {
+    float:inline-start;
+    margin-bottom: 0px;
+}
+
+.date {
+    float:inline-end;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.publication-name {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    margin-top: 15px;
+}
+
+th {
+    font-size: 19px;
+    padding-bottom: 5px;
+}
