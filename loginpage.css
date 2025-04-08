@@ -1,0 +1,57 @@
+/* CSS rules for loginpage.html */
+
+/* Body Format */
+body {
+    display: flex; /* proper alignment */
+    flex-direction: column; /* stack elements vertically */
+    align-items: center; /* center elements */
+    text-align: center; /* center text */
+    margin: 0;  /* proper alignment */
+    padding: 0;  /* proper alignment */
+}
+
+/* Login/Logout Button */
+.login_button {
+    width: 300px; /* width */
+    height: 40px; /* height */
+    background-color: lightblue; /* background color */
+    border: 2px solid black; /* border format */
+    border-radius: 8px; /* rounded border */
+    font-size: 20px; /* text size */
+    font-style: italic; /* italicize text */
+    text-align: center; /* center text */
+    padding: 8px; /* add padding around text */
+    display: inline-block; /* proper alignment */
+    margin-top: 10px; /* top spacing */
+    cursor: pointer; /* clickable cursor */
+}
+        
+/* Username & Password Bar Format */
+input {
+    width: 300px; /* width */
+    height: 40px; /* height */
+    background-color: lightgray; /* background color */
+    border: 2px solid black; /* border format */
+    border-radius: 8px; /* rounded border */
+    font-size: 20px; /* text size */
+    font-style: italic; /* italicize text */
+    text-align: center; /* center text */
+    padding: 8px; /* add padding around text */
+}
+
+/* Rectangle for Info Format */
+.rectangle.large {
+    position: relative; 
+    display: flex; /* proper alignment */
+    width: 480px; /* rectangle width */
+    height: 400px; /* rectangle height */
+    border: 2px solid white; /* border format */
+    border-radius: 8px; /* rounded border */
+    font-size: 20px; /* font size */
+    font-weight: bold; /* font bold */
+    text-align: top; /* text top alignment */
+    padding: 8px; /* add padding around text */
+    flex-direction: column; /* stack vertically */
+    justify-content: flex-start; /* top alignment */
+    align-items: center; /* center */
+}

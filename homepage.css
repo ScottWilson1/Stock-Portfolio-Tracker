@@ -1,0 +1,69 @@
+/* CSS rules for homepage.html */
+
+/* Body Format */
+body {
+    display: flex; /* proper alignment */
+    flex-direction: column; /* stack elements vertically */
+    align-items: center; /* center elements */
+    text-align: center; /* center text */
+    margin: 0;  /* proper alignment */
+    padding: 0;  /* proper alignment */
+}
+
+/* Login/Logout Button */
+.login_button, .logout_button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+        
+/* Search Bar Format */
+input {
+    width: 770px; /* width of search bar */
+    height: 40px; /* height of search bar */
+    background-color: lightgray; /* background color */
+    border: 2px solid black; /* border format */
+    border-radius: 8px; /* rounded border */
+    font-size: 20px; /* text size */
+    font-style: italic; /* italicize text */
+    text-align: center; /* center text */
+    padding: 8px; /* add padding around text */
+}
+
+/* Stock Format */
+.rectangle.large {
+    position: relative; 
+    display: flex; /* proper alignment */
+    width: 480px; /* rectangle width */
+    height: 400px; /* rectangle height */
+    border: 2px solid black; /* border format */
+    border-radius: 8px; /* rounded border */
+    font-size: 20px; /* font size */
+    font-weight: bold; /* font bold */
+    text-align: top; /* text top alignment */
+    justify-content: left; /* text left justified */
+    padding: 8px; /* add padding around text */
+}
+
+/* Watchlist Format */
+.rectangle.small {
+    display: flex; /* proper alignment */
+    width: 280px; /* rectangle width */
+    height: 400px; /* rectangle height */
+    border: 2px solid black; /* border format */
+    border-radius: 8px; /* rounded border */
+    font-size: 20px; /* font size */
+    font-weight: bold; /* font bold */
+    text-align: top; /* text top alignment */
+    justify-content: left; /* text left justified */
+    padding: 8px; /* add padding around text */
+}
+
+/* Remove Button */
+.remove_button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,53 @@
+/* CSS rules for settings.html */
+
+/* Body Format */
+body {
+    display: flex; /* proper alignment */
+    flex-direction: column; /* stack elements vertically */
+    align-items: center; /* center elements */
+    text-align: center; /* center text */
+    margin: 0;  /* proper alignment */
+    padding: 0;  /* proper alignment */
+}
+
+/* Rectangle for Info Format */
+.rectangle.large {
+    position: relative; 
+    display: flex; /* proper alignment */
+    width: 480px; /* rectangle width */
+    height: 400px; /* rectangle height */
+    border: 2px solid white; /* border format */
+    border-radius: 8px; /* rounded border */
+    font-size: 20px; /* font size */
+    font-weight: bold; /* font bold */
+    text-align: left; /* text top alignment */
+    padding: 8px; /* add padding around text */
+    flex-direction: column; /* stack vertically */
+    justify-content: flex-start; /* top alignment */
+    align-items: flex-start; /* center */
+}
+
+.user-info-table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 20px;
+    width: 90%;
+}
+
+.user-info-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info-table td a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.user-info-table td a:hover {
+    text-decoration: underline;
+}
+
+
+
+

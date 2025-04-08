@@ -1,0 +1,37 @@
+/* CSS rules for whole site */
+
+h1 {
+    margin-top: 20px; /* padding */
+    font-family: 'Times New Roman', sans-serif;  /* font format */
+    font-size: 50px;  /* font size */
+    color: #003366; /* color */
+    text-align: center;
+}
+
+.subheadings {
+    margin: 0 0 20px 0; /* padding */
+    font-size: 22px; /* font size */
+    font-weight: 300; /* bold */
+}
+
+.subheadings a {
+    text-decoration: none; /* remove underline */
+    color: #0077cc; /* color */
+    margin: 0 10px; /* padding */
+}
+
+.subheadings a:hover {
+    text-decoration: underline; /* underline */
+}
+
+.subheadings a.active {
+    font-weight: bold;
+    color: #003366;
+}
+
+/* Container for Rectangles */
+.rectangle-container {
+    display: flex; /* proper alignment */
+    justify-content: center; /* center rectangles */
+    gap: 30px; /* space between rectangles */
+}
