@@ -1,5 +1,6 @@
 import yfinance as yf
-from edgar import Company, set_identity, get_filings
+from edgar import Company, set_identity, get_filings # "pip install edgartools"
+import pandas as pd
 import numpy as np
 import re
 
@@ -20,18 +21,18 @@ def get_stock_details(ticker):
 
     stock_data[ticker] = {
         "ticker_symbol": ticker,
-        "company_name": info['displayName'],
-        "industry": info['industry'],
-        "cur_price": info['currentPrice'],
+        "company_name": info["displayName"] if "displayName" in info else None,
+        "industry": info["industry"] if "industry" in info else None,
+        "cur_price": info["currentPrice"] if "currentPrice" in info else None,
         "pct_change": ((hist['Close'].iloc[-1] - hist['Close'].iloc[-2]) / hist['Close'].iloc[-2]) * 100,
-        "day_open": hist['Open'].iloc[-1],
-        "day_low": hist['Low'].iloc[-1],
-        "day_high": hist['High'].iloc[-1],
-        "52wk_low": info['fiftyTwoWeekLow'],
-        "52wk_high": info['fiftyTwoWeekHigh'],
-        "market_cap": info['marketCap'],
-        "curr_volume": info['volume'],
-        "avg_volume": info['averageVolume'],
+        "day_open": hist['Open'].iloc[-1] if 'Open' in hist.columns else None,
+        "day_low": hist['Low'].iloc[-1] if 'Low' in hist.columns else None,
+        "day_high": hist['High'].iloc[-1] if 'High' in hist.columns else None,
+        "52wk_low": info["fiftyTwoWeekLow"] if "fiftyTwoWeekLow" in info else None,
+        "52wk_high": info["fiftyTwoWeekHigh"] if "fiftyTwoWeekHigh" in info else None,
+        "market_cap": info["marketCap"] if "marketCap" in info else None,
+        "curr_volume": info["volume"] if "volume" in info else None,
+        "avg_volume": info["averageVolume"] if "averageVolume" in info else None,
         "annual_revenue": get_annual_revenue(stock)
     }
 
@@ -59,7 +60,7 @@ def get_watchlist_data(tickers):
 def get_stock_news(ticker):
     stock = yf.Ticker(ticker)
     news = stock.news
-    df = pd.Dataframe(news)
+    df = pd.DataFrame(news)
 
     return df.head(10) # get only 10
 
