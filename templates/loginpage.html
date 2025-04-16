@@ -4,8 +4,8 @@
 <head>
     <!-- Page Name -->
     <title>Login</title>
-    <link href="global.css" type="text/css" rel="stylesheet"/>
-    <link href="loginpage.css" type="text/css" rel="stylesheet"/>
+    <link href="static/css/global.css" type="text/css" rel="stylesheet"/>
+    <link href="static/css/loginpage.css" type="text/css" rel="stylesheet"/>
 </head>
     
 <body>  
@@ -15,11 +15,11 @@
     
     <!-- Subheadings with Navigation Links -->
     <div class="subheadings">
-        <a href="homepage.html">Home</a> |
+        <a href="{{ url_for('homepage') }}">Home</a> |
         <!-- <a href="loginpage.html">Login</a> | -->
-        <a href="loginpage.html" class="active">Login</a> |
-        <a href="settings.html">Account Settings</a> |
-        <a href="documentation.html">Documentation</a>
+        <a href="{{ url_for('login') }}" class="active">Login</a> |
+        <a href="{{ url_for('settings') }}">Account Settings</a> |
+        <a href="{{ url_for('documentation') }}">Documentation</a>
     </div>
 
     <!-- Container for Rectangles -->

@@ -29,6 +29,9 @@ body {
 /* Watchlist Format */
 .rectangle.small {
     display: flex; /* proper alignment */
+    flex-direction: column; /*stacks the buttons vertically*/
+    overflow-y: auto; /*vertical scroll bar if buttons overflow*/
+    overflow-x: hidden; /*any button horizontal overflow hides*/
     width: 280px; /* rectangle width */
     height: 400px; /* rectangle height */
     border: 2px solid black; /* border format */
@@ -37,7 +40,46 @@ body {
     font-weight: bold; /* font bold */
     text-align: top; /* text top alignment */
     justify-content: left; /* text left justified */
-    padding: 8px; /* add padding around text */
+    padding: 0px; /* add padding around text */
+    align-items: center;
+}
+
+/*Watchlist Buttons Format*/
+.stockButton {
+    width: 270px;
+    height: 35px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-top: 0px solid #FFFFFF;
+    border-bottom: 0px solid #FFFFFF;
+    border-left: 0px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.stockButton:hover {
+    box-shadow: 0 6px 13px 0 rgba(0,0,0,0.15), 0 -6px 13px 0 rgba(0,0,0,0.10);
+}
+
+.symbol {
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.price {
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.increase {
+    color: #008000;
+    font-size: 14px;
+}
+
+.decrease {
+    color: #B22222;
+    font-size: 14px;
 }
 
 /* Search Bar Format */
@@ -55,11 +97,17 @@ input {
 
 /* Search Button */
 .search_button {
+    position: absolute;
     cursor: pointer;
     background-color: #0077cc;
     border: 2px solid #0077cc;
     border-radius: 30px;
     color: white;
+    transition-duration: 0.4s;
+}
+
+.search_button:hover {
+    background-color: #00008B;
 }
 
 /* News Article */
@@ -72,6 +120,11 @@ input {
     border: 2px solid #0077cc;
     border-radius: 30px;
     color: white;
+    transition-duration: 0.4s;
+}
+
+.news_article:hover {
+    background-color: #00008B;
 }
 
 /* Remove Button */
@@ -80,10 +133,15 @@ input {
     bottom: 10px;
     right: 10px;
     cursor: pointer;
-    background-color: #0077cc;
-    border: 2px solid #0077cc;
+    background-color: #B22222;
+    border: 2px solid #B22222;
     border-radius: 30px;
     color: white;
+    transition-duration: 0.4s;
+}
+
+.removeButton:hover {
+    background-color: #800000;
 }
 
 /* Add Button */
@@ -92,10 +150,15 @@ input {
     bottom: 10px;
     right: 10px;
     cursor: pointer;
-    background-color: #0077cc;
-    border: 2px solid #0077cc;
+    background-color: #228B22;
+    border: 2px solid #228B22;
     border-radius: 30px;
     color: white;
+    transition-duration: 0.4s;
+}
+
+.addButton:hover {
+    background-color: #006400;
 }
 
 #companyTicker, #companyName {
@@ -110,4 +173,19 @@ input {
 
 #companyName {
     text-align: left;
+}
+
+#watchlistTitle {
+    background-color: #FFFFFF;
+    width: 270px;
+    height: 35px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-top: 0px solid #FFFFFF;
+    border-bottom: 0px solid #FFFFFF;
+    border-left: 0px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    font-size: 30px;
+    color: #003366;
+    text-align: center;
 }

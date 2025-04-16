@@ -4,8 +4,8 @@
 <head>
     <!-- Page Name -->
     <title>Stock Portfolio Tracker</title>
-    <link href="global.css" type="text/css" rel="stylesheet"/>
-    <link href="homepage.css" type="text/css" rel="stylesheet"/>
+    <link href="static/css/global.css" type="text/css" rel="stylesheet"/>
+    <link href="static/css/homepage.css" type="text/css" rel="stylesheet"/>
 </head>
     
 <body>  
@@ -15,17 +15,17 @@
     
     <!-- Subheadings with Navigation Links -->
     <div class="subheadings">
-        <a href="homepage.html" class="active">Home</a> |
+        <a href="{{ url_for('homepage') }}" class="active">Home</a> |
         <!-- <a href="loginpage.html">Login</a> | -->
-        <a href="loginpage.html">Login</a> |
-        <a href="settings.html">Account Settings</a> |
-        <a href="documentation.html">Documentation</a>
+        <a href="{{ url_for('login') }}">Login</a> |
+        <a href="{{ url_for('settings') }}">Account Settings</a> |
+        <a href="{{ url_for('documentation') }}">Documentation</a>
     </div>
     
     <!-- Search Bar -->
     <form>
-        <input type="text" placeholder="ticker">
-        <button type="submit" class="search_button">Search</button>
+        <input id="searchText" type="text" placeholder="ticker">
+        <button id="searchButton" type="submit" class="search_button">Search</button>
     </form>
 
     <!-- Container for Rectangles -->
@@ -33,24 +33,27 @@
             
         <!-- Display User Bar -->
         <div>
-            <div id="username"></div>
+            <div id="username">hi_roller_31</div>
         </div>
             
         <!-- Display Stock -->
         <div id="stockDisplay" class="rectangle large">
-            <h1 id="companyTicker">GME</h1>
-            <h2 id="companyName">Gamestop Corp.</h2>
+            <h1 id="companyTicker"></h1>
+            <h2 id="companyName"></h2>
+            <div id="stockData"></div>
             <form action="news.html"><button type="submit" class="news_article">News Article</button></form>
         </div>
         
         <!-- Display Watchlist -->
-        <div class="rectangle small"><i>Watchlist</i></div> 
+        <div id="watchlist" class="rectangle small">
+        <div id="watchlistTitle">Watchlist</div>
+        </div> 
     </div>
 
     <!-- imports supabase javascript library to html page -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="helpers.js"></script>
-    <script src="tracker.js"></script>
+    <script src="/static/js/helpers.js"></script>
+    <script src="/static/js/tracker.js"></script>
     <script>window.onload = loadWatchlist;</script>
 
 </body>
